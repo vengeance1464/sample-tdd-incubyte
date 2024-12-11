@@ -14,13 +14,14 @@ class StringCalculcator{
     add(numsInput:string)
     {
 
+       let allNumbers:string[]=[]
       try
       {
        if(numsInput.length===0) return 0
 
        if(numsInput.length===1) return Number(numsInput)
 
-       this.validationService.validate(numsInput)
+       this.validationService.validateDelimeters(numsInput)
 
        let transformedStringArr=StringUtils.splitString(numsInput,constants.NEW_LINE)
 
@@ -36,7 +37,9 @@ class StringCalculcator{
             else if(StringUtils.contains(item,delimeter))
             {
              const numsArr = StringUtils.splitString(item,delimeter)
-             
+
+             allNumbers=[...allNumbers,...numsArr]
+
              const sum=numsArr.reduce((accum,curr)=>{
                 return accum+Number(curr)
              },0)
@@ -47,6 +50,8 @@ class StringCalculcator{
                totalSum+=Number(item)
             }
       }
+
+      this.validationService.validateNumbersInInput(allNumbers)
 
        return totalSum
       }catch(err:any)

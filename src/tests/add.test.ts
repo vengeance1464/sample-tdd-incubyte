@@ -47,5 +47,9 @@ describe('Add function tests', () => {
     test('add() should fail for invalid input', () => {
         expect(addInstance.add("4,5\n//\n1;2\n7;8\n//.\n1.9")).toBe("Input is invalid")
     });
+
+    test('add() should fail for negative input', () => {
+        expect(addInstance.add("-4,5\n//;\n1;2\n-7;8\n//.\n1.-9")).toBe("negative numbers not allowed -4,-7,-9")
+    });
 });
 
