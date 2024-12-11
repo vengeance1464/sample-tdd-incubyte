@@ -11,6 +11,11 @@ class StringUtils {
     static splitString(str: string,delimeter:string): string[] {
       return str.split(delimeter)
     }
+
+    static endsWithNumber(str: string): boolean {
+        // Regular expression to check if the last character is a number
+        return /\d$/.test(str);
+      }
   }
   
   export default StringUtils

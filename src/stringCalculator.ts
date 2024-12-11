@@ -1,12 +1,25 @@
+import StringValidationService from "./services/stringValidationService"
 import StringUtils from "./utils"
-class StringCalculcator{
 
+class StringCalculcator{
+   validationService: StringValidationService
+
+   constructor()
+   {
+     this.validationService=new StringValidationService()
+
+   }
 
     add(numsInput:string)
     {
+
+      try
+      {
        if(numsInput.length===0) return 0
 
        if(numsInput.length===1) return Number(numsInput)
+
+       this.validationService.validate(numsInput)
 
 
        if(StringUtils.contains(numsInput,","))
@@ -21,6 +34,10 @@ class StringCalculcator{
        }
         
        return Number(numsInput)
+      }catch(err:any)
+      {
+         return err?.message
+      }
     }
 }
 

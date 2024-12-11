@@ -23,5 +23,9 @@ describe('Utility Function Tests', () => {
     test('add() should correctly work for two numbers separated by comma delimeter', () => {
         expect(addInstance.add("5,6,9")).toBe(20)
     });
+
+    test('add() should fail for invalid string', () => {
+        expect(addInstance.add("1,\n")).toBe("Input is invalid")
+    });
 });
 
