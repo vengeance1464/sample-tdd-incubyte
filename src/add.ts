@@ -1,4 +1,4 @@
-
+import StringUtils from "./utils"
 class AddService{
 
 
@@ -9,9 +9,9 @@ class AddService{
        if(numsInput.length===1) return Number(numsInput)
 
 
-       if(numsInput.includes(","))
+       if(StringUtils.contains(numsInput,","))
        {
-        const numsArr = numsInput.split(",")
+        const numsArr = StringUtils.splitString(numsInput,",")
         
         const sum=numsArr.reduce((accum,curr)=>{
            return accum+Number(curr)
