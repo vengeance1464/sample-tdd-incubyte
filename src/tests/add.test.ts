@@ -28,8 +28,20 @@ describe('Utility Function Tests', () => {
         expect(addInstance.add("1,\n")).toBe("Input is invalid")
     });
 
-    test('add() should cpmput for valid string with new lines', () => {
+    test('add() should compute for valid string with new lines', () => {
         expect(addInstance.add("1\n2,3")).toBe(6)
+    });
+
+    test('add() should compute for valid string with ; delimeter', () => {
+        expect(addInstance.add("//;\n1;2")).toBe(3)
+    });
+
+    test('add() should compute for valid string with multiple delimeter', () => {
+        expect(addInstance.add("4,5\n//;\n1;2\n7;8")).toBe(27)
+    });
+
+    test('add() should compute for valid string with multiple delimeter', () => {
+        expect(addInstance.add("4,5\n//;\n1;2\n7;8\n//.\n1.9")).toBe(37)
     });
 });
 

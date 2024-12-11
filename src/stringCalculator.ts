@@ -29,7 +29,11 @@ class StringCalculcator{
        let totalSum=0
        for(let item of transformedStringArr)
       {
-            if(StringUtils.contains(item,delimeter))
+           if(StringUtils.contains(item,"//"))
+           {
+              delimeter=item[item.length-1]
+           }
+            else if(StringUtils.contains(item,delimeter))
             {
              const numsArr = StringUtils.splitString(item,delimeter)
              
