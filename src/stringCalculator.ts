@@ -1,5 +1,5 @@
 import StringUtils from "./utils"
-class AddService{
+class StringCalculcator{
 
 
     add(numsInput:string)
@@ -25,4 +25,4 @@ class AddService{
 }
 
 
-export default AddService
+export default StringCalculcator

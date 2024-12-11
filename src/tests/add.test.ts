@@ -1,12 +1,12 @@
-import AddService from "../add";
+import StringCalculcator from "../stringCalculator";
 
 describe('Utility Function Tests', () => {
 
-    let addInstance:AddService;
+    let addInstance:StringCalculcator;
 
     // Runs once before all tests in this describe block
     beforeAll(() => {
-        addInstance = new AddService(); // Initialize the add instance
+        addInstance = new StringCalculcator(); // Initialize the add instance
     });
     test('add() should correctly work for empty string', () => {
         expect(addInstance.add("")).toBe(0)
