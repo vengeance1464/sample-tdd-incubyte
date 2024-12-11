@@ -1,3 +1,4 @@
+import { constants } from "./constants"
 import StringValidationService from "./services/stringValidationService"
 import StringUtils from "./utils"
 
@@ -21,19 +22,29 @@ class StringCalculcator{
 
        this.validationService.validate(numsInput)
 
+       let transformedStringArr=StringUtils.splitString(numsInput,constants.NEW_LINE)
 
-       if(StringUtils.contains(numsInput,","))
-       {
-        const numsArr = StringUtils.splitString(numsInput,",")
-        
-        const sum=numsArr.reduce((accum,curr)=>{
-           return accum+Number(curr)
-        },0)
+       let delimeter=constants.DEFAULT_DELEMETER
 
-        return sum
-       }
-        
-       return Number(numsInput)
+       let totalSum=0
+       for(let item of transformedStringArr)
+      {
+            if(StringUtils.contains(item,delimeter))
+            {
+             const numsArr = StringUtils.splitString(item,delimeter)
+             
+             const sum=numsArr.reduce((accum,curr)=>{
+                return accum+Number(curr)
+             },0)
+     
+             totalSum+= sum
+            }else
+            {
+               totalSum+=Number(item)
+            }
+      }
+
+       return totalSum
       }catch(err:any)
       {
          return err?.message

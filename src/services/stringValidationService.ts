@@ -1,3 +1,4 @@
+import { constants } from "../constants";
 import StringUtils from "../utils";
 
 class StringValidationService{
@@ -5,7 +6,7 @@ class StringValidationService{
 
 validate(input:string)
 {
-    if(StringUtils.contains(input,"\n"))
+    if(StringUtils.contains(input,constants.NEW_LINE))
     {
    const splitInputNewLines=StringUtils.splitString(input,"\n")
 

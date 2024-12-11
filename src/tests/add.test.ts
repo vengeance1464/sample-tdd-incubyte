@@ -27,5 +27,9 @@ describe('Utility Function Tests', () => {
     test('add() should fail for invalid string', () => {
         expect(addInstance.add("1,\n")).toBe("Input is invalid")
     });
+
+    test('add() should cpmput for valid string with new lines', () => {
+        expect(addInstance.add("1\n2,3")).toBe(6)
+    });
 });
 
