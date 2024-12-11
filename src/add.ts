@@ -2,7 +2,7 @@
 class AddService{
 
 
-    add(numsInput)
+    add(numsInput:string)
     {
        if(numsInput.length===0) return 0
 

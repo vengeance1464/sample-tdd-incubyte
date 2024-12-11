@@ -7,7 +7,7 @@ const rl = readline.createInterface({
 });
 
 
-const lines = [];
+const lines:string[] = [];
 
 console.log('Enter multiple lines of input (type "exit" or an empty line to finish):');
 

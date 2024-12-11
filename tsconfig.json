@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "target": "ESNext", // Output modern JavaScript
+      "module": "ESNext", // Use ES modules
+      "moduleResolution": "node", // Resolve modules like Node.js
+      "esModuleInterop": true, // Allow `import` from CommonJS modules
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "outDir": "./dist", // Output directory for compiled files
+      "rootDir": "./src", // Input directory for TypeScript files
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
+  }
+  

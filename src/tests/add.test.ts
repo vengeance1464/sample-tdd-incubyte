@@ -2,7 +2,7 @@ import AddService from "../add";
 
 describe('Utility Function Tests', () => {
 
-    let addInstance;
+    let addInstance:AddService;
 
     // Runs once before all tests in this describe block
     beforeAll(() => {
