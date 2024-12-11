@@ -9,6 +9,10 @@ describe('Utility Function Tests', () => {
         addInstance = new AddService(); // Initialize the add instance
     });
     test('add() should correctly work for empty string', () => {
-        expect(addInstance.add(""))
+        expect(addInstance.add("")).toBe(0)
+    });
+
+    test('add() should correctly work for one number', () => {
+        expect(addInstance.add("5")).toBe(5)
     });
 });
