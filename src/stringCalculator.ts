@@ -41,7 +41,10 @@ class StringCalculcator{
              allNumbers=[...allNumbers,...numsArr]
 
              const sum=numsArr.reduce((accum,curr)=>{
+                if(Number(curr)<=1000)
                 return accum+Number(curr)
+
+                return accum
              },0)
      
              totalSum+= sum

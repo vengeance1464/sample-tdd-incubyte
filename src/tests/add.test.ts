@@ -51,5 +51,9 @@ describe('Add function tests', () => {
     test('add() should fail for negative input', () => {
         expect(addInstance.add("-4,5\n//;\n1;2\n-7;8\n//.\n1.-9")).toBe("negative numbers not allowed -4,-7,-9")
     });
+
+    test('add() should ignore numbers more than 1000', () => {
+        expect(addInstance.add("1002,5\n//;\n1;2\n10007;8\n//.\n1.9")).toBe(26)
+    });
 });
 
