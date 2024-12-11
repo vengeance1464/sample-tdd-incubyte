@@ -1,6 +1,6 @@
 import StringCalculcator from "../stringCalculator";
 
-describe('Utility Function Tests', () => {
+describe('Add function tests', () => {
 
     let addInstance:StringCalculcator;
 
@@ -42,6 +42,10 @@ describe('Utility Function Tests', () => {
 
     test('add() should compute for valid string with multiple delimeter', () => {
         expect(addInstance.add("4,5\n//;\n1;2\n7;8\n//.\n1.9")).toBe(37)
+    });
+
+    test('add() should fail for invalid input', () => {
+        expect(addInstance.add("4,5\n//\n1;2\n7;8\n//.\n1.9")).toBe("Input is invalid")
     });
 });
 
