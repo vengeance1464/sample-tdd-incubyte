@@ -15,4 +15,13 @@ describe('Utility Function Tests', () => {
     test('add() should correctly work for one number', () => {
         expect(addInstance.add("5")).toBe(5)
     });
+
+    test('add() should correctly work for two numbers separated by comma delimeter', () => {
+        expect(addInstance.add("5,6")).toBe(11)
+    });
+
+    test('add() should correctly work for two numbers separated by comma delimeter', () => {
+        expect(addInstance.add("5,6,9")).toBe(20)
+    });
 });
+
