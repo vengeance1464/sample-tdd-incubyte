@@ -10,6 +10,6 @@ In the src folder, the following are the files-:
 5. CustomError.ts-Error file for exception handling
 
 # Steps To Run
-
-1. Install dependencies using npm install or npm i
-2. Run tests using npm run test
+1. Clone the Repo.Checkout main branch
+2. Install dependencies using npm install or npm i
+3. Run tests using npm run test
