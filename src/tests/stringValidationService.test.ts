@@ -23,17 +23,29 @@ describe("String Validation Service Failure", () => {
     stringValidationService = new StringValidationService(); // Initialize the add instance
   });
 
-  test("string validation service should validate delimeters", () => {
+  test("string validation service should invalidate delimeters", () => {
+    expect(() => stringValidationService.validateDelimeters("abc")).toThrow(
+      "Input is invalid"
+    );
+  });
+
+  test("string validation service should invalidate delimeters", () => {
+    expect(() => stringValidationService.validateDelimeters("1,abc")).toThrow(
+      "Input is invalid"
+    );
+  });
+
+  test("string validation service should invalidate delimeters", () => {
     expect(() => stringValidationService.validateDelimeters("1,\n")).toThrow(
       "Input is invalid"
     );
   });
-  test("string validation service should validate delimeters", () => {
+  test("string validation service should invalidate delimeters", () => {
     expect(() => stringValidationService.validateDelimeters("1,\n")).toThrow(
       "Input is invalid"
     );
   });
-  test("string validation service should validate delimeters", () => {
+  test("string validation service should invalidate delimeters", () => {
     expect(() =>
       stringValidationService.validateDelimeters("4,5\n//\n1;2\n7;8\n//.\n1.9")
     ).toThrow("Input is invalid");
