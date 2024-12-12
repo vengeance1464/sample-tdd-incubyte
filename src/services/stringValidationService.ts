@@ -4,7 +4,7 @@ import StringUtils from "../utils";
 
 class StringValidationService{
 
-
+//Validates if string is properly formatted 
 validateDelimeters(input:string)
 {
    
@@ -25,6 +25,8 @@ return true
 
 }
 
+
+//validates the numbers in the input
 validateNumbersInInput(input:string[]):boolean
 {
   if(input.length>0)

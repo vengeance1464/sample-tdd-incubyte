@@ -11,6 +11,7 @@ class StringCalculcator{
 
    }
 
+   //adds the numbers in the input string
     add(numsInput:string)
     {
 
