@@ -1,9 +1,7 @@
-
-enum Delimeters{
-
-    DEFAULT_DELEMETER=",",
-    NEW_LINE="\n",
-    NEW_DELIMETER="//"
+enum Delimeters {
+  DEFAULT_DELEMETER = ",",
+  NEW_LINE = "\n",
+  NEW_DELIMETER = "//",
 }
 
-export {Delimeters}
+export { Delimeters };
