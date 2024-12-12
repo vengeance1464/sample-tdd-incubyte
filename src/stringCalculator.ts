@@ -1,4 +1,4 @@
-import { constants } from "./constants"
+import { Delimeters } from "./types"
 import StringValidationService from "./services/stringValidationService"
 import StringUtils from "./utils"
 
@@ -17,20 +17,21 @@ class StringCalculcator{
        let allNumbers:string[]=[]
       try
       {
-       if(numsInput.length===0) return 0
+       let result=this.validationService.validateDelimeters(numsInput)
 
-       if(numsInput.length===1) return Number(numsInput)
+       if(!result)
+       {
+         throw new Error("Input is invalid")
+       }
 
-       this.validationService.validateDelimeters(numsInput)
+       let transformedStringArr=StringUtils.splitString(numsInput,Delimeters.NEW_LINE)
 
-       let transformedStringArr=StringUtils.splitString(numsInput,constants.NEW_LINE)
-
-       let delimeter=constants.DEFAULT_DELEMETER
+       let delimeter:string=Delimeters.DEFAULT_DELEMETER
 
        let totalSum=0
        for(let item of transformedStringArr)
       {
-           if(StringUtils.contains(item,"//"))
+           if(StringUtils.contains(item,Delimeters.NEW_DELIMETER))
            {
               delimeter=item[item.length-1]
            }
@@ -54,7 +55,7 @@ class StringCalculcator{
             }
       }
 
-      this.validationService.validateNumbersInInput(allNumbers)
+       result=this.validationService.validateNumbersInInput(allNumbers)
 
        return totalSum
       }catch(err:any)
